@@ -1,36 +1,30 @@
-# Windows Admin Command Center
+# PowerShell SysAdmin Toolkit
+### Ported from Linux-Native Utilities
 
-A PowerShell-based management CLI for Active Directory administration, designed to standardize common tasks and ensure all actions are logged and confirmed before execution.
+A collection of high-performance PowerShell scripts designed to mirror the functionality of my Linux networking and system administration tools. This toolkit is built for speed, transparency, and deep-system visibility in Windows environments.
 
-## Overview
-This tool provides a menu-driven interface over common Active Directory operations. It is built to reduce repetitive command entry, improve consistency, and add basic safeguards around administrative actions.
+## Repository Overview
+
+This repo contains a suite of PowerShell (`.ps1`) scripts that replace or enhance traditional Windows administrative tasks with a Linux-inspired workflow.
+
+| Script | Functionality | Linux Equivalent / Inspiration |
+| :--- | :--- | :--- |
+| **Admin.ps1** | Centralized Command Center for elevated system tasks. | `sudo` / `root` dashboard |
+| **DNS_Check.ps1** | Advanced DNS resolution and propagation testing. | `dig` / `nslookup` |
+| **Dump.ps1** | System state capturing and log exporting. | `dmesg` / `journalctl` |
+| **Net.ps1** | Network interface monitoring and socket analysis. | `netstat` / `ip addr` |
+| **Ntools.ps1** | Network diagnostic utility suite. | `nmap` (basic) / `traceroute` |
+| **ssh_copy.ps1** | Automated SSH key distribution and management. | `ssh-copy-id` |
 
 ## Key Features
-- **Audit-Grade Logging:** All actions (success and failure) are timestamped and written to a local log file.
-- **State-Based Workflow:** Select a target user or computer once, then perform multiple actions without re-entering identifiers.
-- **Confirmation Prompts:** Actions like account changes, restarts, and OU moves require explicit confirmation.
-- **Resilient Error Handling:** Try/catch handling prevents script crashes and returns useful error messages when objects are not found.
-- **Admin Toolbox:** Includes common remote actions such as gpupdate /force and system restarts.
 
-## Functionality
-### User Management
-- Retrieve detailed user properties (lockout status, group membership, password info)
-- Enable/disable accounts
-- Move users between OUs
+* **Elevated Workflow:** `Admin.ps1` acts as a primary entry point for managing system-level changes without hunting through the GUI.
+* **Networking Parity:** Scripts like `Net.ps1` and `DNS_Check.ps1` provide the granular output typically found in terminal-heavy Linux environments.
+* **Automation-Ready:** All tools are designed to be lightweight, portable, and easily integrated into larger automation pipelines or remote management sessions.
 
-### Computer Management
-- View system and network details
-- Trigger remote updates and restarts
-- Enable/disable or move computer objects
+## Usage
 
-## Project Structure
-- Automatic creation of log directories in the user profile.
-- Separate logic for User, Computer, and Action headers/functions for easy extensibility.
+To use these tools, ensure your [Execution Policy](https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.security/set-executionpolicy) allows for local script execution:
 
-## Requirements
-- PowerShell 5.1 or PowerShell 7+
-- ActiveDirectory module
-- Appropriate administrative privileges
-
----
-*Developed as part of a proactive infrastructure management suite for high-availability enterprise environments.*
+```powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
