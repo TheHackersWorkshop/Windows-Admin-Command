@@ -9,12 +9,11 @@ This repo contains a suite of PowerShell (`.ps1`) scripts that replace or enhanc
 
 | Script | Functionality | Linux Equivalent / Inspiration |
 | :--- | :--- | :--- |
-| **Admin.ps1** | Centralized Command Center for elevated system tasks. | `sudo` / `root` dashboard |
-| **DNS_Check.ps1** | Advanced DNS resolution and propagation testing. | `dig` / `nslookup` |
-| **Dump.ps1** | System state capturing and log exporting. | `dmesg` / `journalctl` |
+| **Admin.ps1** | Centralized AD Center for elevated system tasks. | `sudo` / `root` dashboard |
+| **Dump.ps1** | dedicated Network Packet Capture and Analysis tool. | `dmesg` / `journalctl` |
 | **Net.ps1** | Network interface monitoring and socket analysis. | `netstat` / `ip addr` |
-| **Ntools.ps1** | Network diagnostic utility suite. | `nmap` (basic) / `traceroute` |
-| **ssh_copy.ps1** | Automated SSH key distribution and management. | `ssh-copy-id` |
+| **Ntools.ps1** | Network Diagnostic Dashboard. | `nmap` (basic) / `traceroute` |
+| **ssh_copy.ps1** | Cross-Platform File Transfer Utility. | `ssh-copy-id` |
 
 ## Key Features
 
